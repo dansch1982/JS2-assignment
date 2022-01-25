@@ -67,7 +67,6 @@ function addInput(key) {
 
 function operate(operator) {
     const value = parseFloat($("#inputString").val()).toString();
-    console.log(value)
     if (!value || isNaN(value)) {
         return
     } else {
