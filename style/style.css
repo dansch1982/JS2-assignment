@@ -9,41 +9,43 @@
 
 body {
   display: flex;
-  flex-direction: column;
-  justify-items: center;
-  padding: 2rem;
   margin: 0;
+  padding: 0;
   background: radial-gradient(circle, transparent 20%, #a89e92 20%, #a89e92 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #a89e92 20%, #a89e92 80%, transparent 80%, transparent) 20px 20px, linear-gradient(#4e483d 1.6px, transparent 1.6px) 0 -0.8px, linear-gradient(90deg, #4e483d 1.6px, #a89e92 1.6px) -0.8px 0;
   background-size: 40px 40px, 40px 40px, 20px 20px, 20px 20px;
 }
-body > section:nth-child(1n+2) {
+body > section {
+  padding: 2rem;
+  margin: auto;
+}
+body > section > section:nth-child(1n+2) {
   margin-top: 1rem;
 }
-body #input,
-body #calc,
-body #result {
+body > section #input,
+body > section #calc,
+body > section #result {
   display: flex;
 }
-body #input :first-child,
-body #calc :first-child,
-body #result :first-child {
+body > section #input :first-child,
+body > section #calc :first-child,
+body > section #result :first-child {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
-body #input :last-child,
-body #calc :last-child,
-body #result :last-child {
+body > section #input :last-child,
+body > section #calc :last-child,
+body > section #result :last-child {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
-body #input :nth-child(1n),
-body #calc :nth-child(1n),
-body #result :nth-child(1n) {
+body > section #input :nth-child(1n),
+body > section #calc :nth-child(1n),
+body > section #result :nth-child(1n) {
   border: 2px solid black;
 }
-body #input :nth-child(1n+2),
-body #calc :nth-child(1n+2),
-body #result :nth-child(1n+2) {
+body > section #input :nth-child(1n+2),
+body > section #calc :nth-child(1n+2),
+body > section #result :nth-child(1n+2) {
   border-left: 0;
 }
 
@@ -83,7 +85,6 @@ span {
   padding: 2px 5px;
   min-width: 4rem;
   display: flex;
-  text-align: end;
   align-items: center;
   background-color: whitesmoke;
   border: 2px solid black;
