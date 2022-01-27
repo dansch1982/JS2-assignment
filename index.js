@@ -91,17 +91,17 @@ function calculate() {
     $("#resultString").val(calcArray(list))
 }
 function calcArray(array) {
-    let operator;
+    let index;
     if (array.length <= 1) {
         return array[0] ? array[0] : 0 
-    } else if (array.includes('*')) {
-        operator = "*"
-    } else if (array.includes('/')) {
-        operator = "/"
-    } else if (array.includes('+')) {
-        operator = "+"
-    } else if (array.includes('-')) {
-        operator = "-"
+    } else if (array.includes('*') || array.includes('/')) {
+        const firstIndex = array.indexOf("*")
+        const secondIndex = array.indexOf("/")
+        index = firstIndex < secondIndex ? firstIndex < 0 ? secondIndex : firstIndex : secondIndex < 0 ? firstIndex : secondIndex
+    } else if (array.includes('+') || array.includes('-')) {
+        const firstIndex = array.indexOf("+")
+        const secondIndex = array.indexOf("-")
+        index = firstIndex < secondIndex ? firstIndex < 0 ? secondIndex : firstIndex : secondIndex < 0 ? firstIndex : secondIndex
     }
     const operatorArray = {
         "*": (a, b) => {
@@ -117,7 +117,7 @@ function calcArray(array) {
             return a - b
         },
     }
-    const index = array.indexOf(operator)
+    const operator = array[index]
     const number = operatorArray[operator](parseFloat(array[index - 1]), parseFloat(array[index + 1]))
     array.splice(index - 1, 3, number)
     return calcArray(array)
