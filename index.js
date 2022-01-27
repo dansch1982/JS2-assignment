@@ -72,7 +72,7 @@ function operate(operator) {
     } else {
         let list = $("#calcString").attr("list")
         if (!list) {
-            list = [operator === "-" ? operator+value : value]
+            list = [operator === "-" ? operator + value : value]
         } else {
             list = $("#calcString").attr("list").split(",")
             list.push(operator, value)
@@ -80,6 +80,7 @@ function operate(operator) {
         $("#calcString").attr("list", list)
         $("#calcString").val(list.join(""))
         $("#inputString").val("")
+        $("#resultString").val("")
     }
 }
 
