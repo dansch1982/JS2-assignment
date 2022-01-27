@@ -1,3 +1,7 @@
+$("form").on('submit', function () {
+    return false
+})
+
 $("#inputString").keypress(function (event) {
     return (event.charCode >= 48 && event.charCode <= 57) || (event.charCode == 46 && !this.value.includes("."))
 })
@@ -16,7 +20,7 @@ $(document).on('keydown', function (event) {
     let key = event.key.toLowerCase()
 
     if (!$('#inputString').is(':focus') && (!isNaN(key) || (key === "." && !$('#inputString').val().includes(".")))) {
-        return $('#inputString').val($('#inputString').val()+key)
+        return $('#inputString').val($('#inputString').val() + key)
     }
 
     if (key === "enter") key = "="
@@ -33,7 +37,7 @@ $(document).on('keydown', function (event) {
         }
     })
 
-    
+
 
 })
 $("#input").on('click', 'button', function () {
@@ -91,6 +95,7 @@ function calculate() {
     $("#calcString").removeAttr("list")
     $("#resultString").val(calcArray(list))
 }
+
 function calcArray(array) {
     let index;
     if (array.length <= 1) {
