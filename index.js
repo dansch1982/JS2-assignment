@@ -37,8 +37,6 @@ $(document).on('keydown', function (event) {
         }
     })
 
-
-
 })
 $("#input").on('click', 'button', function () {
     addInput(this.textContent)
